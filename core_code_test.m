@@ -1,7 +1,7 @@
 function [est_BrAC,beta_n,TAC,q_est]=core_code_test(q,sigma_c,sigma_f,Gamma,m,n,dim,C,D,E,F,mu,S,T,bas,p)
 
 % q=[0.63,0.78];
-% sigma_c=0;
+% sigma_c=0.003;
 % sigma_f=0;
 % Gamma=0.01*eye(2);
 inv_G=inv(Gamma);
