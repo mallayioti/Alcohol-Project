@@ -1,4 +1,4 @@
-function [est_BrAC,beta_n,TAC,q_est]=core_code_test(q,sigma_c,sigma_f,Gamma,m,n,dim,C,D,E,F,mu,S,T,bas,p)
+function [est_BrAC,beta_n,TAC,q_est]=core_code_test(q,sigma_c,sigma_f,Gamma,m,n,dim,C,D,E,F,mu,S,T,bas,p,exp_num)
 
 % q=[0.63,0.78];
 % sigma_c=0.003;
@@ -19,7 +19,7 @@ B= q(2)*F;
 TAC(:,1)=[0:S/(n-1):S];
 t=TAC(:,1);
 
-    for w=1:100
+    for w=1:exp_num
         w
         %generate q_m and new field session 
         q_est(w,:)=mvnrnd(q,sigma_c^2*inv_G/m);
