@@ -1,12 +1,13 @@
 
 % construct plot of reconstructed BrAC curves and confidence bounds
 
+rho=m/n;
 fi_=@(u)[Bspl{2}(u),Bspl{3}(u),Bspl{4}(u),Bspl{5}(u),Bspl{6}(u)];
 r1=mvnrnd([0,0],eye(2),1000);
 r2=mvnrnd([0,0,0,0,0],eye(5),1000);
 for i=1:1000
-    R1=@(s)sigma*fi_(s)*transpose(K)*Gamma^(-1/2)*transpose(r1(i,:))+sqrt(rho)*sigma*fi_(s)*G^(-1/2)*transpose(r2(i,:));
-    R2=@(s)-sigma*fi_(s)*transpose(K)*Gamma^(-1/2)*transpose(r1(i,:))+sqrt(rho)*sigma*fi_(s)*G^(-1/2)*transpose(r2(i,:));
+    R1=@(s)sigma_c*fi_(s)*transpose(K)*Gamma^(-1/2)*transpose(r1(i,:))+sqrt(rho)*sigma_f*fi_(s)*G^(-1/2)*transpose(r2(i,:));
+    R2=@(s)-sigma_c*fi_(s)*transpose(K)*Gamma^(-1/2)*transpose(r1(i,:))+sqrt(rho)*sigma_f*fi_(s)*G^(-1/2)*transpose(r2(i,:));
     min1R(i)=fmincon(R1,0.5,[],[],[],[],0,1);
     min2R(i)=fmincon(R2,0.5,[],[],[],[],0,1);
     R1min=R1(min1R(i));
