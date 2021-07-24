@@ -4,18 +4,20 @@ function [est_BrAC,beta_n,TAC,q_est]=core_code_test(q,sigma_c,sigma_f,Gamma,m,n,
 % sigma_c=0.003;
 % sigma_f=0;
 % Gamma=0.01*eye(2);
-inv_G=inv(Gamma);
 % m=60;
 % n=floor(m^(3/2))+1;
 % dim=4;
 % [D,E,F,C]=matrices(dim-1);
-A= -q(1)*D - E;
-B= q(2)*F;
 % mu=@(u)Bspl{3}(u);
 % S=1;
 % T=1;
 % bas=Bspl;
 % p=5;
+%exp_num=100;
+
+inv_G=inv(Gamma);
+A= -q(1)*D - E;
+B= q(2)*F;
 TAC(:,1)=[0:S/(n-1):S];
 t=TAC(:,1);
 
