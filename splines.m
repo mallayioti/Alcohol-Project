@@ -1,5 +1,8 @@
 function [Bspl]=splines(degree,N)
 
+%degree=3
+%N=3
+
 n=200;
 y=linspace(0,1,n);
 intknots=(1:N)/(N+1);
