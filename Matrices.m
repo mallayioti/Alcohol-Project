@@ -1,4 +1,4 @@
-function [A_0,A_1,B_0,C_1] = Matrices(n)
+function [A_0,A_1,B_0,C_1] = matrices(n)
 
 %  A = -q_1*A_0 - A_1;  B =  q_2*B_0
 
