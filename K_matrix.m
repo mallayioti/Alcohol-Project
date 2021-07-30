@@ -1,13 +1,5 @@
 function [K,G] = K_matrix(C,D,E,F,dim,p,S,q,bas,mu)
 
-% q=[0.63,0.78];
-% dim=4;
-% [D,E,F,C]=matrices(dim-1);
-% mu=@(u)Bspl{3}(u);
-% S=1;
-% bas=Bspl;
-% p=5;
-
 q1=q(1);
 q2=q(2);
 A=-q1*D - E;
