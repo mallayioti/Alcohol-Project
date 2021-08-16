@@ -39,7 +39,7 @@ p = fill(xconf,y1conf,'red');
 p.FaceColor = [1 0.8 0.8];      
 p.EdgeColor = 'none';           
 hold on
-for i=1:100
+for i=1:exp_num
     plot(transpose([0:1/199:1]),est_BrAC(:,i),'LineWidth',2)
     hold on
 end
